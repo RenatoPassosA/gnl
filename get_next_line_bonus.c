@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpassos- <rpassos-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 19:45:53 by rpassos-          #+#    #+#             */
-/*   Updated: 2024/11/08 15:23:12 by rpassos-         ###   ########.fr       */
+/*   Updated: 2024/11/08 15:23:33 by rpassos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static char	*set_line(char **store)
 		i++;
 		line = ft_substr(*store, 0, i);
 		temp = *store;
-		*store = ft_substr(*store, i, ft_strlen(*store) - i);
+		*store = ft_substr(*store, i, ft_strlen(ft_strchr(*store, '\n')));
 		free(temp);
 	}
 	else
@@ -91,13 +91,13 @@ static char	*read_line(int fd, char **store)
 
 char	*get_next_line(int fd)
 {
-	static char	*store = NULL;
+	static char	*store[1024];
 	char		*line;
 
 	line = NULL;
 	if (fd < 0 || fd >= 1024 || BUFFER_SIZE <= 0)
 		return (NULL);
-	line = read_line(fd, &store);
+	line = read_line(fd, &store[fd]);
 	if (!line)
 		return (NULL);
 	return (line);

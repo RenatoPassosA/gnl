@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpassos- <rpassos-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 18:08:06 by rpassos-          #+#    #+#             */
-/*   Updated: 2024/11/06 18:08:08 by rpassos-         ###   ########.fr       */
+/*   Created: 2024/11/06 19:14:04 by rpassos-          #+#    #+#             */
+/*   Updated: 2024/11/06 19:14:06 by rpassos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*concat(char *final, char *str, int index)
 {
